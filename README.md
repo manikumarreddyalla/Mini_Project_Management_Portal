@@ -438,13 +438,3 @@ ode init-db.js\ to initialize database
 **Repository:** https://github.com/manikumarreddyalla/Mini_Project_Management_Portal
 
 ---
-
-## ?? License
-
-This project is created for educational purposes as part of the 4th-year CSE curriculum at Vel Tech University By Me.
-
----
-
-## ?? Acknowledgments
-
-- **Vel Tech University** - For the opportunity to work on this project

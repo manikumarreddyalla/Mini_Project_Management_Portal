@@ -44,59 +44,63 @@ Build a web application where users can manage project tasks:
 
 ---
 
-## ?? Project Structure
-
-\\\
 mini-project-management-portal/
-�
-+-- frontend/                          # React application
-�   +-- src/
-�   �   +-- components/               # Reusable UI components
-�   �   �   +-- Header.jsx           # Header component
-�   �   �   +-- TaskCard.jsx         # Individual task display
-�   �   �   +-- TaskForm.jsx         # Task form (future)
-�   �   �   +-- LoadingSpinner.jsx   # Loading indicator
-�   �   �   +-- EmptyState.jsx       # Empty state message
-�   �   �   +-- ErrorAlert.jsx       # Error messages
-�   �   �   +-- Button.jsx           # Reusable button
-�   �   +-- pages/                    # Page components
-�   �   �   +-- Dashboard.jsx        # Main task list page
-�   �   �   +-- AddTask.jsx          # Create task page
-�   �   +-- services/
-�   �   �   +-- taskService.js       # API calls
-�   �   +-- App.jsx                  # Main app component
-�   �   +-- App.css                  # Global styles
-�   �   +-- main.jsx                 # Entry point
-�   +-- index.html                   # HTML template
-�   +-- vite.config.js              # Vite configuration
-�   +-- package.json                # Dependencies
-�   +-- .env.example                # Environment template
-�
-+-- backend/                           # Node.js/Express server
-�   +-- config/
-�   �   +-- database.js             # MySQL connection
-�   +-- controllers/
-�   �   +-- taskController.js       # Request handlers
-�   +-- models/
-�   �   +-- Task.js                 # Task data model
-�   +-- routes/
-�   �   +-- taskRoutes.js           # API route definitions
-�   +-- middleware/
-�   �   +-- index.js                # Logger & error handler
-�   �   +-- validation.js           # Input validation
-�   +-- server.js                   # Express app
-�   +-- init-db.js                  # Database initialization
-�   +-- test-api.js                 # API testing script
-�   +-- package.json                # Dependencies
-�   +-- .env                        # Environment variables
-�   +-- .env.example                # Environment template
-�
-+-- README.md                         # This file
-+-- .gitignore                        # Git ignore rules
-+-- INTEGRATION_TESTING_REPORT.md    # Test results
-+-- TESTING_CHECKLIST.md             # Testing guide
-
-\\\
+│
+├── frontend/                         # React Application
+│   ├── src/
+│   │   ├── components/              # Reusable UI Components
+│   │   │   ├── Header.jsx           # Header Component
+│   │   │   ├── TaskCard.jsx         # Individual Task Display
+│   │   │   ├── TaskForm.jsx         # Task Creation Form (Future)
+│   │   │   ├── LoadingSpinner.jsx   # Loading Indicator
+│   │   │   ├── EmptyState.jsx       # No Data State
+│   │   │   ├── ErrorAlert.jsx       # Error Messages
+│   │   │   └── Button.jsx           # Reusable Button Component
+│   │   │
+│   │   ├── pages/                   # Application Pages
+│   │   │   ├── Dashboard.jsx        # Main Dashboard
+│   │   │   └── AddTask.jsx          # Create New Task
+│   │   │
+│   │   ├── services/
+│   │   │   └── taskService.js       # API Communication Layer
+│   │   │
+│   │   ├── App.jsx                  # Root Component
+│   │   ├── App.css                  # Global Styles
+│   │   └── main.jsx                 # React Entry Point
+│   │
+│   ├── index.html                   # HTML Template
+│   ├── vite.config.js               # Vite Configuration
+│   ├── package.json                 # Frontend Dependencies
+│   └── .env.example                 # Environment Variables Template
+│
+├── backend/                          # Node.js + Express API
+│   ├── config/
+│   │   └── database.js              # MySQL Database Connection
+│   │
+│   ├── controllers/
+│   │   └── taskController.js        # Request Handlers
+│   │
+│   ├── models/
+│   │   └── Task.js                  # Task Model
+│   │
+│   ├── routes/
+│   │   └── taskRoutes.js            # API Routes
+│   │
+│   ├── middleware/
+│   │   ├── index.js                 # Logger & Error Handler
+│   │   └── validation.js            # Request Validation
+│   │
+│   ├── server.js                    # Express Server Entry Point
+│   ├── init-db.js                   # Database Initialization Script
+│   ├── test-api.js                  # API Testing Script
+│   ├── package.json                 # Backend Dependencies
+│   ├── .env                         # Environment Variables
+│   └── .env.example                 # Environment Variables Template
+│
+├── README.md                        # Project Documentation
+├── INTEGRATION_TESTING_REPORT.md    # Integration Testing Results
+├── TESTING_CHECKLIST.md             # Testing Checklist
+└── .gitignore                       # Git Ignore Rules
 
 ---
 
@@ -399,7 +403,8 @@ Each commit represents a complete, working feature.
 - Check if port 5000 is already in use
 - Verify Node.js is installed: \
 ode --version\
-- Reinstall dependencies: \m -rf node_modules && npm install\
+- Reinstall dependencies: \
+m -rf node_modules && npm install\
 
 ### Database Connection Error
 - Verify MySQL is running
@@ -432,19 +437,10 @@ ode init-db.js\ to initialize database
 
 ## ?? License
 
-This project is created for educational purposes as part of the 4th-year CSE curriculum at Vel Tech University.
+This project is created for educational purposes as part of the 4th-year CSE curriculum at Vel Tech University By Me.
 
 ---
 
 ## ?? Acknowledgments
 
 - **Vel Tech University** - For the opportunity to work on this project
-- **Express.js Documentation** - Framework reference
-- **React Documentation** - Component patterns
-- **MySQL Documentation** - Database design
-
----
-
-**Project Status:** ? Complete and Ready for Submission
-
-Last Updated: June 20, 2024

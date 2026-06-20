@@ -7,7 +7,7 @@ import ErrorAlert from '../components/ErrorAlert';
 import { taskService } from '../services/taskService';
 import './Dashboard.css';
 
-export default function Dashboard() {
+export default function Dashboard({ onNavigate }) {
   const [tasks, setTasks] = useState([]);
   const [filteredTasks, setFilteredTasks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -73,8 +73,10 @@ export default function Dashboard() {
       
       <div className="container">
         <div className="dashboard-header">
-          <h2>?? All Tasks</h2>
-          <a href="/add-task" className="btn-add-task">+ Add New Task</a>
+          <h2>📋 All Tasks</h2>
+          <button className="btn-add-task" onClick={() => onNavigate && onNavigate('addtask')}>
+            + Add New Task
+          </button>
         </div>
 
         {error && <ErrorAlert message={error} onClose={() => setError(null)} />}
@@ -83,7 +85,7 @@ export default function Dashboard() {
           {['All', 'Pending', 'In Progress', 'Completed'].map(status => (
             <button
               key={status}
-              className={\ilter-btn \$\{statusFilter === status ? 'active' : ''}\}
+              className={`filter-btn ${statusFilter === status ? 'active' : ''}`}
               onClick={() => applyFilter(status, tasks)}
             >
               {status}

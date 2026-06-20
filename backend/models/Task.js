@@ -2,7 +2,7 @@ const { pool } = require('../config/database');
 
 class TaskModel {
   static async createTasksTable() {
-    const query = 
+    const query = `
       CREATE TABLE IF NOT EXISTS tasks (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
@@ -13,16 +13,16 @@ class TaskModel {
         INDEX idx_status (status),
         INDEX idx_created_at (created_at)
       )
-    ;
+    `;
     
     try {
       const connection = await pool.getConnection();
       await connection.query(query);
       connection.release();
-      console.log('? Tasks table created/verified');
+      console.log('✓ Tasks table created/verified');
       return true;
     } catch (error) {
-      console.error('? Error creating tasks table:', error.message);
+      console.error('✗ Error creating tasks table:', error.message);
       return false;
     }
   }

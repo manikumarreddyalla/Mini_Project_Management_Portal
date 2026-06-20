@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import ErrorAlert from '../components/ErrorAlert';
 import { taskService } from '../services/taskService';
 import './AddTask.css';
 
-export default function AddTask() {
-  const navigate = useNavigate();
+export default function AddTask({ onNavigate }) {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -57,7 +55,13 @@ export default function AddTask() {
     try {
       setLoading(true);
       await taskService.createTask(formData);
-      navigate('/');
+      // Navigate back to dashboard
+      if (onNavigate) {
+        onNavigate('dashboard');
+      } else {
+        window.history.pushState({}, '', '/');
+        window.location.reload();
+      }
     } catch (err) {
       setErrors([err.response?.data?.message || 'Failed to create task']);
     } finally {
@@ -71,7 +75,7 @@ export default function AddTask() {
       
       <div className="container">
         <div className="form-card">
-          <h2>?? Create New Task</h2>
+          <h2>✨ Create New Task</h2>
           
           {errors.length > 0 && (
             <ErrorAlert 
@@ -125,9 +129,15 @@ export default function AddTask() {
 
             <div className="form-actions">
               <button type="submit" className="btn-submit" disabled={loading}>
-                {loading ? 'Creating...' : '? Create Task'}
+                {loading ? 'Creating...' : '✨ Create Task'}
               </button>
-              <a href="/" className="btn-cancel">Cancel</a>
+              <button 
+                type="button" 
+                className="btn-cancel" 
+                onClick={() => onNavigate && onNavigate('dashboard')}
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>

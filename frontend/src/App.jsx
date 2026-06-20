@@ -36,8 +36,8 @@ function App() {
 
   return (
     <div className='app'>
-      {currentPage === 'dashboard' && <Dashboard />}
-      {currentPage === 'addtask' && <AddTask />}
+      {currentPage === 'dashboard' && <Dashboard onNavigate={navigateTo} />}
+      {currentPage === 'addtask' && <AddTask onNavigate={navigateTo} />}
     </div>
   );
 }

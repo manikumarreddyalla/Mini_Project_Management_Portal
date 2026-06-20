@@ -1,3 +1,4 @@
+import React from 'react';
 import './TaskCard.css';
 
 export default function TaskCard({ task, onComplete, onDelete }) {
@@ -19,32 +20,32 @@ export default function TaskCard({ task, onComplete, onDelete }) {
   };
 
   return (
-    <div className=\"task-card\">
-      <div className=\"task-header\">
+    <div className="task-card">
+      <div className="task-header">
         <h3>{task.title}</h3>
-        <span className={\status-badge \$\{getStatusColor(task.status)}\}>
+        <span className={`status-badge ${getStatusColor(task.status)}`}>
           {task.status}
         </span>
       </div>
-      <p className=\"task-description\">{task.description}</p>
-      <div className=\"task-footer\">
-        <small className=\"task-date\">?? {formatDate(task.created_at)}</small>
-        <div className=\"task-actions\">
+      <p className="task-description">{task.description}</p>
+      <div className="task-footer">
+        <small className="task-date">📅 {formatDate(task.created_at)}</small>
+        <div className="task-actions">
           {task.status !== 'Completed' && (
             <button 
-              className=\"btn btn-complete\" 
+              className="btn btn-complete" 
               onClick={() => onComplete(task.id)}
-              title=\"Mark as completed\"
+              title="Mark as completed"
             >
-              ? Complete
+              ✅ Complete
             </button>
           )}
           <button 
-            className=\"btn btn-delete\" 
+            className="btn btn-delete" 
             onClick={() => onDelete(task.id)}
-            title=\"Delete task\"
+            title="Delete task"
           >
-            ?? Delete
+            🗑️ Delete
           </button>
         </div>
       </div>

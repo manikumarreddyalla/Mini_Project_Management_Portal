@@ -44,63 +44,67 @@ Build a web application where users can manage project tasks:
 
 ---
 
+## 📂 Project Structure
+
+```text
 mini-project-management-portal/
 │
-├── frontend/                         # React Application
+├── frontend/
 │   ├── src/
-│   │   ├── components/              # Reusable UI Components
-│   │   │   ├── Header.jsx           # Header Component
-│   │   │   ├── TaskCard.jsx         # Individual Task Display
-│   │   │   ├── TaskForm.jsx         # Task Creation Form (Future)
-│   │   │   ├── LoadingSpinner.jsx   # Loading Indicator
-│   │   │   ├── EmptyState.jsx       # No Data State
-│   │   │   ├── ErrorAlert.jsx       # Error Messages
-│   │   │   └── Button.jsx           # Reusable Button Component
+│   │   ├── components/
+│   │   │   ├── Header.jsx
+│   │   │   ├── TaskCard.jsx
+│   │   │   ├── TaskForm.jsx
+│   │   │   ├── LoadingSpinner.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   ├── ErrorAlert.jsx
+│   │   │   └── Button.jsx
 │   │   │
-│   │   ├── pages/                   # Application Pages
-│   │   │   ├── Dashboard.jsx        # Main Dashboard
-│   │   │   └── AddTask.jsx          # Create New Task
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── AddTask.jsx
 │   │   │
 │   │   ├── services/
-│   │   │   └── taskService.js       # API Communication Layer
+│   │   │   └── taskService.js
 │   │   │
-│   │   ├── App.jsx                  # Root Component
-│   │   ├── App.css                  # Global Styles
-│   │   └── main.jsx                 # React Entry Point
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
 │   │
-│   ├── index.html                   # HTML Template
-│   ├── vite.config.js               # Vite Configuration
-│   ├── package.json                 # Frontend Dependencies
-│   └── .env.example                 # Environment Variables Template
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   └── .env.example
 │
-├── backend/                          # Node.js + Express API
+├── backend/
 │   ├── config/
-│   │   └── database.js              # MySQL Database Connection
+│   │   └── database.js
 │   │
 │   ├── controllers/
-│   │   └── taskController.js        # Request Handlers
+│   │   └── taskController.js
 │   │
 │   ├── models/
-│   │   └── Task.js                  # Task Model
+│   │   └── Task.js
 │   │
 │   ├── routes/
-│   │   └── taskRoutes.js            # API Routes
+│   │   └── taskRoutes.js
 │   │
 │   ├── middleware/
-│   │   ├── index.js                 # Logger & Error Handler
-│   │   └── validation.js            # Request Validation
+│   │   ├── index.js
+│   │   └── validation.js
 │   │
-│   ├── server.js                    # Express Server Entry Point
-│   ├── init-db.js                   # Database Initialization Script
-│   ├── test-api.js                  # API Testing Script
-│   ├── package.json                 # Backend Dependencies
-│   ├── .env                         # Environment Variables
-│   └── .env.example                 # Environment Variables Template
+│   ├── server.js
+│   ├── init-db.js
+│   ├── test-api.js
+│   ├── package.json
+│   ├── .env
+│   └── .env.example
 │
-├── README.md                        # Project Documentation
-├── INTEGRATION_TESTING_REPORT.md    # Integration Testing Results
-├── TESTING_CHECKLIST.md             # Testing Checklist
-└── .gitignore                       # Git Ignore Rules
+├── README.md
+├── INTEGRATION_TESTING_REPORT.md
+├── TESTING_CHECKLIST.md
+└── .gitignore
+```
 
 ---
 

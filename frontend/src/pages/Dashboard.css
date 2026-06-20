@@ -1,92 +1,96 @@
+.dashboard {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .dashboard-header h2 {
   margin: 0;
+  color: #333;
   font-size: 2rem;
 }
 
 .btn-add-task {
-  background-color: #667eea;
+  background-color: #007bff;
   color: white;
-  padding: 10px 20px;
+  border: none;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: opacity 0.2s;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn-add-task:hover {
-  opacity: 0.8;
+  background-color: #0056b3;
 }
 
 .filter-buttons {
   display: flex;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 8px 16px;
+  padding: 0.5rem 1.25rem;
   border: 2px solid #ddd;
-  background: white;
+  background-color: white;
+  color: #666;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #007bff;
+  color: #007bff;
 }
 
 .filter-btn.active {
-  background-color: #667eea;
+  background-color: #007bff;
   color: white;
-  border-color: #667eea;
-}
-
-.tasks-info {
-  color: #999;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  border-color: #007bff;
 }
 
 .tasks-grid {
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
 }
 
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.5rem;
   }
 
   .btn-add-task {
-    text-align: center;
+    width: 100%;
   }
 
-  .filter-buttons {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 5px;
+  .tasks-grid {
+    grid-template-columns: 1fr;
   }
 }

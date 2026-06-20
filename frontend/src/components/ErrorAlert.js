@@ -1,4 +1,5 @@
-﻿import './ErrorAlert.css';
+import React from 'react';
+import './ErrorAlert.css';
 
 export default function ErrorAlert({ message, onClose }) {
   return (

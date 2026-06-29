@@ -1,10 +1,6 @@
-# Mini Project Management Portal
+#Project Management Portal
 
-A full-stack web application for managing project tasks with a modern, responsive user interface.
-
-**Author:** Mani Kumar Reddy Alla  
-**University:** Vel Tech (Deemed to be University), 4th Year CSE  
-**Project Type:** Full-Stack Development Assessment
+A full-stack web application for managing project tasks with a modern, responsive user interface
 
 ---
 
